@@ -1,6 +1,6 @@
-package com.example.argear.api;
+package com.example.facefilterassignment.api;
 
-import com.example.argear.models.CategoryModel;
+import com.example.facefilterassignment.models.CategoryModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
