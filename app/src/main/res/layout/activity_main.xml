@@ -1,18 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <FrameLayout
+            android:id="@+id/camera_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/black" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/top_ratio_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/white"
+            android:visibility="invisible" />
+
+        <View
+            android:id="@+id/bottom_ratio_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_alignParentEnd="true" >
+            <Button
+                android:id="@+id/camera_switch_button"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:onClick="onClickButtons"
+                android:background="@drawable/btn_camera_switch"/>
+        </LinearLayout>
+
+        <!--functions layout-->
+        <LinearLayout
+            android:id="@+id/functions_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="29dp">
+
+            <Button
+                android:id="@+id/sticker_button"
+                android:layout_width="52dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="23.5dp"
+                android:onClick="onClickButtons"
+                android:background="@drawable/sticker_btn_default"/>
+
+            <Button
+                android:id="@+id/shutter_button"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="23.5dp"
+                android:text=""
+                android:textOn=""
+                android:textOff=""
+                android:checked="false"
+                android:onClick="onClickButtons"
+                android:background="@drawable/btn_shutter_photo_blue"/>
+
+            <Button
+                android:id="@+id/gallery_button"
+                android:layout_width="52dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="23.5dp"
+                android:onClick="onClickButtons"
+                android:background="@drawable/gallery"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+        <FrameLayout
+            android:id="@+id/slot_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+        </FrameLayout>
+
+    </RelativeLayout>
+</layout>
